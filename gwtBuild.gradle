@@ -16,7 +16,7 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.StopActionException
-import org.gradle.api.tasks.compile.Compile
+import org.gradle.api.tasks.compile.JavaCompile
 
 
 apply plugin: 'war'
@@ -76,32 +76,32 @@ dependency = new DefaultExternalModuleDependency("com.google.gwt", "gwt-dev", gw
 dependency.setTransitive(false)
 project.configurations.getByName(GWTConstants.GWT_CONFIGURATION_NAME).dependencies.add(dependency)
 project.configurations.getByName(GWTConstants.SUPER_GWT_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
 dependency = new DefaultExternalModuleDependency("com.google.gwt", "gwt-codeserver", gwtVersion)
 dependency.setTransitive(false)
 project.configurations.getByName(GWTConstants.SUPER_GWT_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
 dependency = new DefaultExternalModuleDependency("javax.validation", "validation-api", "1.0.0.GA")
 project.configurations.getByName(GWTConstants.GWT_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
 dependency = new DefaultExternalModuleDependency("javax.validation", "validation-api", "1.0.0.GA")
 ModuleFactoryHelper.addExplicitArtifactsIfDefined(dependency, null, "sources")
 project.configurations.getByName(GWTConstants.GWT_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
 dependency = new DefaultExternalModuleDependency("com.google.gwt", "gwt-user", gwtVersion )
 project.configurations.getByName(WarPlugin.PROVIDED_COMPILE_CONFIGURATION_NAME).dependencies.add(dependency)
 project.configurations.getByName(GWTConstants.SUPER_GWT_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
 dependency = new DefaultExternalModuleDependency("com.google.gwt", "gwt-servlet", gwtVersion)
 project.configurations.getByName(JavaPlugin.RUNTIME_CONFIGURATION_NAME).dependencies.add(dependency)
-project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
+//project.configurations.getByName(GWTConstants.ECLIPSE_EXCLUDE_CONFIGURATION_NAME).dependencies.add(dependency)
 
-project.tasks.withType(Compile.class).all { Compile task ->
+project.tasks.withType(JavaCompile.class).all { JavaCompile task ->
 	if (task.getClasspath()) {
 		task.setClasspath(task.getClasspath() + project.configurations.getByName(GWTConstants.GWT_CONFIGURATION_NAME))
 	}
