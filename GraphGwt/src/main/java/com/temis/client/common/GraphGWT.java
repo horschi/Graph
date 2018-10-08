@@ -80,7 +80,20 @@ public abstract class GraphGWT extends SimplePanel {
 	 * @param alpha transparency node
 	 * @param link url associated to the node
 	 */
-	public abstract void addNode(String name, String color, String shape, String label, double alpha, String link);
+	public abstract void addNode(String name, String color, String shape, String label, double alpha, String link, Integer x, Integer y, boolean fixed);
+	
+	/**
+	 * Add a node into the graph.
+	 * @param name reference 
+	 * @param color node
+	 * @param shape (rect or dot)
+	 * @param label displayed name node
+	 * @param alpha transparency node
+	 * @param link url associated to the node
+	 */
+	public void addNode(String name, String color, String shape, String label, double alpha, String link) {
+		addNode(name, color, shape, label, 1, link, null, null, false);
+	}
 	
 	/**
 	 * Add a node into the graph.
