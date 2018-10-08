@@ -117,13 +117,13 @@ public class VivaGraph extends GraphGWT {
 		node.put("shape", new JSONString(shape));
 		node.put("label", new JSONString(label));
 		node.put("alpha", new JSONNumber(alpha));
-//		if(x != null && y != null) {
-//			node.put("x", new JSONNumber(x));
-//			node.put("y", new JSONNumber(y));
-//		}
-//		if(fixed) {
-//			node.put("fixed", new JSONString("true"));
-//		}
+		if(x != null && y != null) {
+			node.put("x", new JSONNumber(x));
+			node.put("y", new JSONNumber(y));
+		}
+		if(fixed) {
+			node.put("isPinned", new JSONString("true"));
+		}
 		if (link != null) {
 			node.put("link", new JSONString(link));
 		}
