@@ -11,7 +11,19 @@ import com.temis.client.common.GraphGWT;
 import com.temis.shared.Resources;
 
 public class ArborJS extends GraphGWT {
-	
+
+	public ArborJS() {
+		super();
+	}
+
+	public ArborJS(final String name, final int height, final int width) {
+		super(name, height, width);
+	}
+
+	public ArborJS(final String name) {
+		super(name);
+	}
+
 	/* (non-Javadoc)
 	 * @see com.temis.client.common.GraphGWT#getImplementationWidget(int, int, java.lang.String)
 	 */

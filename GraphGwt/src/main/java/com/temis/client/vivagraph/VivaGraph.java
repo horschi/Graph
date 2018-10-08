@@ -14,6 +14,17 @@ public class VivaGraph extends GraphGWT {
 	
 	JavaScriptObject graphInstance;
 	
+	public VivaGraph() {
+	}
+
+	public VivaGraph(String name, int height, int width) {
+		super(name, height, width);
+	}
+
+	public VivaGraph(String name) {
+		super(name);
+	}
+
 	@Override
 	public Widget getImplementationWidget(int height, int width, String name) {
 		SimplePanel widget = new SimplePanel();
