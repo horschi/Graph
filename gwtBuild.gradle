@@ -22,7 +22,7 @@ import org.gradle.api.tasks.compile.JavaCompile
 apply plugin: 'war'
 apply plugin: 'jettyEclipse'
 
-project.ext { gwtVersion = '2.6.0' }
+project.ext { gwtVersion = '2.8.2' }
 
 final File gwtExtraDir = project.file(project.getBuildDir().name + File.separator + "gwt" + File.separator + "extras")
 final File gwtWarDir = project.file(project.getBuildDir().name + File.separator + "gwt" + File.separator + "war")

@@ -6,7 +6,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'com.github.rholder:gradle-one-jar:1.0.3'
+		classpath 'com.github.rholder:gradle-one-jar:1.0.4'
 		classpath (group: 'com.sahlbach.gradle', name: 'gradle-jetty-eclipse-plugin', version: '1.9.+')
 	}
 }
@@ -16,10 +16,10 @@ subprojects {
 	apply plugin: 'eclipse'
 	apply plugin: 'maven'
 	
-	sourceCompatibility = 1.7
-	targetCompatibility = 1.7
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
 	
-	version = '1.0.1'
+	version = '1.0.1-forked'
 	ext.isReleaseVersion = !version.endsWith("SNAPSHOT")
 	
 	group = 'com.temis'
